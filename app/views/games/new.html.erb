@@ -1,0 +1,14 @@
+<h1>new game</h1>
+<p>Find me in app/views/games/new.html.erb</p>
+
+
+
+<h2><%= @letters.join(' ').upcase %></h2>
+
+<form action="score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="word" placeholder="words" autofocus>
+  <input type="hidden" name="letters" value="<%= @letters.join('').upcase %>" />
+  <%= hidden_field_tag :letters_dima, @letters.join('').upcase %>
+  <input type="submit">
+</form>
